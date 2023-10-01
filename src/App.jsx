@@ -8,10 +8,16 @@ import Cart from "./pages/Cart";
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/store">Store</Link>
-        <Link to="/cart">Cart</Link>
+      <nav className="nav">
+        <Link className="to-home" to="/">
+          Home
+        </Link>
+        <Link className="to-store" to="/store">
+          Store
+        </Link>
+        <Link className="to-cart" to="/cart">
+          Cart
+        </Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

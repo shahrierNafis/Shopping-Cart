@@ -1,5 +1,5 @@
 import propTypes from "prop-types";
-
+import css from "./Sidebar.module.css";
 /**
  * Renders the sidebar component.
  *
@@ -13,20 +13,22 @@ function Sidebar({ categories, current, setCurrent }) {
   if (categories.length === 0) {
     return (
       <>
-        <nav className="categories">loading</nav>
+        <nav className={css.categories}>loading</nav>
       </>
     );
   }
 
   return (
     <>
-      <nav className="categories">
+      <nav className={css.categories}>
         <div className="title">Categories:</div>
 
         {categories.map((category) => (
           <div
             // Add class "current" if the category is selected
-            className={`category ${current === category ? "active" : ""}`}
+            className={`${css.category} ${
+              current === category ? `${css.active}` : ""
+            }`}
             key={category}
             href={`#${category}`}
             // Change current on click

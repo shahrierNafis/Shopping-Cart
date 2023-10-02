@@ -1,14 +1,24 @@
 import propTypes from "prop-types";
 import Rating from "./Rating";
+import { useNavigate } from "react-router-dom";
+import css from "./Product.module.css";
 function Product({ product }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="product">
+    <div
+      className={css.product}
+      onClick={() => {
+        navigate(`/product/${product.id}`);
+      }}
+    >
       <img src={product.image} alt={product.title} />
-      <div className="title">{product.title}</div>
-      <div className="price">s{product.price}</div>
-      <Rating className="rating" rating={product.rating} />
+      <div className={css.title}>{product.title}</div>
+      <Rating className={css.rating} rating={product.rating} />
       <br />
-      <div className="description">{product.description}</div>
+      <div className={css.price}>${product.price}</div>
+
+      <div className={css.description}>{product.description}</div>
     </div>
   );
 }

@@ -1,0 +1,24 @@
+.product {
+  margin: 1rem;
+  overflow: hidden;
+  border: 1px gray solid;
+  border-radius: 16px;
+  padding: 8px;
+}
+.product:active,
+.product:hover {
+  border-color: blue;
+  overflow: visible;
+  z-index: 2;
+}
+.product img {
+  width: 100%; /* image box size as % of container, see step 1 */
+  height: 60%;
+  object-fit: scale-down;
+}
+.product .description {
+  display: inline;
+  color: gray;
+  height: 40%;
+  background-color: #1b1e24;
+}

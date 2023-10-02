@@ -7,12 +7,14 @@ function Rating({ rating }) {
   const ratingText = [];
   // Add filled starts
   while (flooredRating) {
-    ratingText.push(<span className="fa fa-star checked"></span>);
+    ratingText.push(
+      <span key={Math.random()} className="fa fa-star checked"></span>
+    );
     flooredRating--;
   }
   // Add empty starts
   while (5 - ratingText.length) {
-    ratingText.push(<span className="fa fa-star"></span>);
+    ratingText.push(<span key={Math.random()} className="fa fa-star"></span>);
   }
   // return the rating
   return (

@@ -1,0 +1,37 @@
+.root {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "content content";
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 12fr;
+}
+.product {
+  padding: 2rem;
+  grid-area: content;
+  display: grid;
+  grid-template-areas:
+    ". ."
+    "image info"
+    ". .";
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+}
+.image {
+  grid-area: image;
+
+  width: 100%;
+  height: 75vh;
+  object-fit: scale-down;
+}
+.info {
+  grid-area: info;
+  padding: 16px;
+}
+.title {
+  font-size: 2rem;
+}
+.price {
+  font-size: 1.5rem;
+}

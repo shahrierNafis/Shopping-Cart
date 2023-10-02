@@ -1,6 +1,7 @@
 import propTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Product from "./Product";
+import css from "./Products.module.css";
 /**
  * Fetches products based on the given category using the Fake Store API.
  * Displays the products once they are fetched.
@@ -11,14 +12,11 @@ import Product from "./Product";
  */
 function Products({ category }) {
   // State to store the fetched products
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(undefined);
 
   useEffect(() => {
     // Create an abort controller to cancel previous fetch requests
     const abortController = new AbortController();
-
-    // Set products to undefined to show the loading screen
-    setProducts(undefined);
 
     // Fetch products from the Fake Store API
     fetch(`https://fakestoreapi.com/products/category/${category}`, {
@@ -53,7 +51,7 @@ function Products({ category }) {
   // Display the fetched products
   return (
     <>
-      <div className="products">
+      <div className={css.products}>
         {products.map((product) => (
           <Product key={product.id} product={product} />
         ))}

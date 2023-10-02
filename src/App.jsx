@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Cart from "./pages/Cart";
-
+import ProductPage from "./pages/ProductPage";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Sidebar from "../components/Sidebar";
 import Products from "../components/Products";
+import css from "./Shop.module.css";
 /**
  * Represents a Store component.
  * @component
@@ -12,6 +13,8 @@ function Store() {
   const [current, setCurrent] = useState("");
 
   useEffect(() => {
+    // change layout
+    document.querySelector(".root").className = `root ${css.root}`;
     // Fetch the categories from the API
     fetch("https://fakestoreapi.com/products/categories")
       .then((response) => {

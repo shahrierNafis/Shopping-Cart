@@ -1,0 +1,14 @@
+.categories {
+  grid-area: sidebar;
+  font-size: 2rem;
+}
+.categories .title {
+  margin: 0;
+}
+.category {
+  color: gray;
+}
+.category.active {
+  border: 1px blue solid;
+  color: white;
+}

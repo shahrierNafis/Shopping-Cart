@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useReducer, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Products from "../components/Products";
 import css from "./Store.module.css";
@@ -9,9 +10,11 @@ import css from "./Store.module.css";
 function Store() {
   // Define a ref to store the categories
   const categories = useRef([]);
-  // Define a state to store the current category
-  const [current, setCurrent] = useState("");
+  const { category } = useParams();
+  const navigate = useNavigate();
 
+  // Define a state to store the current category
+  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
   useEffect(() => {
     // change layout
     document.querySelector(".root").className = `root ${css.root}`;
@@ -27,22 +30,24 @@ function Store() {
       .then((data) => {
         // Store the category list in the ref
         categories.current = data;
-        // Set the first category as the current category
-        setCurrent(data[0]);
+        // If no category is selected redirect to first category
+        console.log(categories.current);
+        if (!category) navigate(`/store/${data[0]}`);
+        else {
+          // Else rerender
+          forceUpdate();
+        }
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   return (
     <>
       {/* Render the Sidebar component */}
-      <Sidebar
-        categories={categories.current}
-        current={current}
-        setCurrent={setCurrent}
-      />
+      <Sidebar categories={categories.current} current={category} />
+
       {/* Render the Products component */}
-      <Products category={current} />
+      <Products category={category} />
     </>
   );
 }

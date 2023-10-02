@@ -91,8 +91,10 @@ function App() {
       <appContext.Provider value={editCart}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
-
+          <Route path="/store">
+            <Route path="" element={<Store />} />
+            <Route path=":category" element={<Store />} />
+          </Route>
           <Route
             path="/cart"
             element={<Cart cart={cart} resetCart={resetCart} />}

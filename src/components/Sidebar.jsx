@@ -1,5 +1,7 @@
 import propTypes from "prop-types";
 import css from "./Sidebar.module.css";
+import { useNavigate } from "react-router-dom";
+
 /**
  * Renders the sidebar component.
  *
@@ -8,7 +10,9 @@ import css from "./Sidebar.module.css";
  * @param {function} setCurrent - Callback function to set the current category.
  * @returns {JSX.Element} The JSX element representing the sidebar.
  */
-function Sidebar({ categories, current, setCurrent }) {
+function Sidebar({ categories, current }) {
+  const navigate = useNavigate();
+
   // Show loading screen if categories are not yet fetched
   if (categories.length === 0) {
     return (
@@ -32,7 +36,7 @@ function Sidebar({ categories, current, setCurrent }) {
             key={category}
             href={`#${category}`}
             // Change current on click
-            onClick={() => setCurrent(category)}
+            onClick={() => navigate(`/store/${category}`)}
           >
             {category}
           </div>
@@ -44,6 +48,5 @@ function Sidebar({ categories, current, setCurrent }) {
 Sidebar.propTypes = {
   categories: propTypes.array,
   current: propTypes.string,
-  setCurrent: propTypes.func.isRequired,
 };
 export default Sidebar;

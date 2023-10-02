@@ -21,7 +21,10 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
+        <Route path="/store">
+          <Route path="" element={<Store />} />
+          <Route path=":category" element={<Store />} />
+        </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProductPage />} />
       </Routes>

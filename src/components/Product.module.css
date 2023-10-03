@@ -1,14 +1,18 @@
 .product {
   margin: 1rem;
-  overflow: hidden;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   border: 1px gray solid;
   border-radius: 16px;
   padding: 8px;
 }
+.product::-webkit-scrollbar {
+  display: none;
+}
 .product:active,
 .product:hover {
   border-color: blue;
-  overflow: visible;
   z-index: 2;
 }
 .product img {

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Sidebar from "../components/Sidebar";
 import Products from "../components/Products";
-import css from "./Shop.module.css";
+import css from "./Store.module.css";
 /**
  * Represents a Store component.
  * @component

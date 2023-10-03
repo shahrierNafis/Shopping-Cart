@@ -1,0 +1,32 @@
+.products {
+  padding: 16px;
+}
+.product {
+  display: grid;
+  height: 25vh;
+  grid-template-areas: "image info";
+  grid-template-columns: 1fr 4fr;
+  border: 1px gray solid;
+  border-radius: 4px;
+  margin: 8px;
+}
+.image {
+  grid-area: image;
+  height: 25vh;
+  width: 100%;
+  object-fit: scale-down;
+}
+.info {
+  grid-area: info;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.info::-webkit-scrollbar {
+  display: none;
+}
+.description {
+  display: inline;
+  color: gray;
+  background-color: #1b1e24;
+}

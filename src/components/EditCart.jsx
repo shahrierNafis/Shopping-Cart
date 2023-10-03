@@ -36,6 +36,7 @@ function EditCart({ id, quantity }) {
     <>
       {/* Decrease button */}
       <button
+        className={css.quantity}
         onClick={() => {
           handleInput(q - 1);
         }}
@@ -58,6 +59,7 @@ function EditCart({ id, quantity }) {
 
       {/* Increase button */}
       <button
+        className={css.quantity}
         onClick={() => {
           handleInput(q + 1);
         }}

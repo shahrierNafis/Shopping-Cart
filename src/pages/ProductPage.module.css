@@ -6,6 +6,7 @@
     "content content";
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 12fr;
+  font-size: 2vw;
 }
 .product {
   padding: 2rem;
@@ -30,8 +31,27 @@
   padding: 16px;
 }
 .title {
-  font-size: 2rem;
+  font-size: 3vw;
 }
 .price {
-  font-size: 1.5rem;
+  font-size: 2vw;
+}
+@media screen and (width< 768px) {
+  .product {
+    padding: 4px;
+    grid-template-areas:
+      "image"
+      "info";
+    grid-template-columns: 1fr;
+    font-size: 3vw;
+  }
+  .title {
+    font-size: 5vw;
+  }
+  .info {
+    padding: 4px;
+  }
+  .price {
+    font-size: 5vw;
+  }
 }

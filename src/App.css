@@ -18,9 +18,10 @@ body {
 .nav a {
   text-decoration: none;
   color: white;
-  border: white solid 1px;
-  font-size: 2rem;
-  padding: 2px;
+  border: white solid 8px;
+  font-size: 4vw;
+  padding: 8px;
+  border-collapse: collapse;
 }
 .nav .to-home {
 }

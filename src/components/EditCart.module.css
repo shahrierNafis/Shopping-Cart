@@ -1,10 +1,30 @@
 .quantity {
-  width: 2rem;
+  width: 5vw;
+  height: fit-content;
+  font-size: 2vw;
   text-align: center;
 }
+.plusMinus {
+  font-size: 2vw;
+}
 .save {
+  font-size: 2vw;
   color: white;
   background-color: orange;
   padding: 2px;
   border-radius: 6px;
+}
+@media screen and (width< 768px) {
+  .quantity {
+    width: 5vw;
+    font-size: 5vw;
+    text-align: center;
+  }
+  .plusMinus {
+    font-size: 5vw;
+  }
+  .save {
+    font-size: 5vw;
+    padding: 2px;
+  }
 }

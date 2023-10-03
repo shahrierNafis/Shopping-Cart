@@ -29,6 +29,7 @@ function AddToCart({ addToCart, id }) {
     <>
       {/* decrease */}
       <button
+        className={css.plusMinus}
         onClick={() => {
           if (quantity) {
             handleQuantity(quantity - 1);
@@ -48,6 +49,7 @@ function AddToCart({ addToCart, id }) {
       />
       {/* increase */}
       <button
+        className={css.plusMinus}
         onClick={() => {
           handleQuantity(quantity + 1);
         }}

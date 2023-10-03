@@ -8,7 +8,7 @@ body {
   display: grid;
   grid-template-areas:
     "nav nav"
-    ". .";
+    "content content";
   grid-template-columns: 1fr 4fr;
 }
 .nav {
@@ -30,4 +30,7 @@ body {
   margin-left: auto;
 }
 .nav .to-home {
+}
+.home {
+  grid-area: content;
 }
